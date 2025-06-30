@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 4% 11%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 4% 11%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 30 44% 70%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 240 3% 17%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 3% 17%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 30 44% 70%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 3% 17%;
+    --input: 240 3% 17%;
+    --ring: 30 44% 70%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 4% 11%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 4% 11%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 42 100% 75%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 240 3% 17%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 3% 17%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 2 100% 68%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 3% 17%;
+    --input: 240 3% 17%;
+    --ring: 42 100% 75%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 42 100% 75%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 240 3% 17%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 3% 17%;
+    --sidebar-ring: 42 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-elegant {
+    @apply text-gray-100;
+  }
+
+  .text-accent {
+    @apply text-beige;
+  }
+
+  .elegant-card {
+    @apply bg-charcoal/80 backdrop-blur-sm border border-gray-600/20;
+  }
+
+  .elegant-button {
+    @apply bg-beige text-black hover:bg-beige/90 font-medium;
+  }
+
+  .elegant-button-outline {
+    @apply border border-beige/60 text-beige hover:bg-beige/10;
+  }
+
+  .subtle-grain {
+    background-image:
+      radial-gradient(
+        circle at 30% 20%,
+        rgba(230, 177, 126, 0.03) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 70% 80%,
+        rgba(209, 169, 122, 0.02) 0%,
+        transparent 50%
+      );
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .cinematic-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .glass-effect {
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 178, 0.1);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(0, 255, 178, 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 178, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 178, 0.6);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffb2, #00e6a0);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00e6a0, #00cc8e);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 255, 178, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 178, 0.3);
+  color: white;
+}

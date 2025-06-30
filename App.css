@@ -1,0 +1,126 @@
+/* Shopify Dev Studio Landing Page Styles */
+
+/* Remove default root constraints */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll performance optimizations */
+body {
+  overflow-x: hidden;
+  contain: layout style paint;
+}
+
+/* Improve scroll performance for sections with animations */
+section {
+  will-change: auto;
+}
+
+/* Optimize transforms for smooth animations */
+.motion-safe {
+  will-change: transform, opacity;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffb2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00e6a0;
+}
+
+/* Loading animation for 3D components */
+.loading-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #00ffb2;
+}
+
+/* Custom focus styles */
+*:focus {
+  outline: 2px solid #00ffb2;
+  outline-offset: 2px;
+}
+
+/* Remove unwanted focus on buttons */
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure proper stacking context for 3D elements */
+.canvas-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Scroll-triggered animation optimizations */
+.scroll-triggered {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Sticky positioning fix */
+.sticky-container {
+  transform: translateZ(0);
+}
+
+/* Animation performance optimizations */
+.motion-safe {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Optimize for 60fps animations */
+@media (min-resolution: 120dpi) {
+  * {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance optimizations for large content */
+.large-content {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
