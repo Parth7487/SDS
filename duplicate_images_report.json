@@ -1,0 +1,11 @@
+{
+  "scan_info": {
+    "directory": ".",
+    "scan_time": "2025-07-01 20:18:36",
+    "total_groups": 0,
+    "total_duplicate_files": 0,
+    "total_wasted_space_mb": 0.0
+  },
+  "duplicate_groups": {},
+  "recommendations": []
+}
